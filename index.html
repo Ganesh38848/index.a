@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Page</title>
+    <style>
+        body {
+    background-color: #f8f8f8;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    text-align: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.heart {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    transform: rotate(-45deg);
+    margin: 0 auto;
+    animation: heartbeat 1.5s infinite;
+}
+
+.heart::before,
+.heart::after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    background-color: rgb(255, 8, 0);
+    border-radius: 50%;
+}
+
+.heart::before {
+    top: -50px;
+    left: 0;
+}
+
+.heart::after {
+    left: 50px;
+    top: 0;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
+
+h1 {
+    color: #e63946;
+    margin: 20px 0 10px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #e63946;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #d62839;
+}
+
+.hidden {
+    display: none;
+}
+
+#loveMessage {
+    margin-top: 20px;
+    color: #333;
+    font-size: 18px;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="heart" id="heart"></div>
+        <h1>Love is in the Air!</h1>
+        <button id="loveButton">Show Love Message</button>
+        <p id="loveMessage" class="hidden">❤️ You are my everything! ❤️</p>
+    </div>
+
+    <script>document.getElementById('loveButton').addEventListener('click', function() {
+        const loveMessage = document.getElementById('loveMessage');
+        loveMessage.classList.toggle('hidden');
+    });</script>
+</body>
+</html>
